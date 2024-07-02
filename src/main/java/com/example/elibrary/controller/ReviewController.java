@@ -26,7 +26,9 @@ public class ReviewController {
 
     @PostMapping
     public Review addReview(@RequestBody ReviewDto reviewDto, @AuthenticationPrincipal UserEntity user) {
-        return reviewService.addReview(reviewDto, user);
+        Review review = reviewService.addReview(reviewDto, user);
+        System.out.println("Review returned: " + review);
+        return review;
     }
 
     @DeleteMapping("/{id}")

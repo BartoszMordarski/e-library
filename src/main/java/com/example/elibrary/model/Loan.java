@@ -1,5 +1,6 @@
 package com.example.elibrary.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
