@@ -1,5 +1,7 @@
 package com.example.elibrary.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,6 +14,7 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id")
     private Long id;
     private String content;
     private Integer rating;
@@ -23,5 +26,6 @@ public class Review {
 
     @ManyToOne()
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonIgnore
     private UserEntity user;
 }
